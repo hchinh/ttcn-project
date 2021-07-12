@@ -2,6 +2,7 @@ import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { unwrapResult } from '@reduxjs/toolkit';
 import { login } from 'features/Auth/authSlice';
+import { useSnackbar } from 'notistack';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import LoginForm from '../LoginForm/LoginForm';
@@ -19,6 +20,8 @@ const useStyles = makeStyles((theme) => ({
 function Login(props) {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const { enqueueSnackbar } = useSnackbar();
+
   const handleSubmit = async (values) => {
     try {
       const action = login(values);
@@ -26,6 +29,10 @@ function Login(props) {
       unwrapResult(resultAction);
     } catch (error) {
       console.log('Failed to login: ', error);
+      enqueueSnackbar(error.message, {
+        variant: 'error',
+        anchorOrigin: { vertical: 'top', horizontal: 'right' },
+      });
     }
   };
 
