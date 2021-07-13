@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
-import DashboardPage from './pages/DashboardPage';
+import AdminPage from './pages/AdminPage';
 
 AdminFeature.propTypes = {};
 
@@ -9,7 +9,7 @@ function AdminFeature(props) {
   return (
     <div>
       <Switch>
-        <Route path={match.url} component={DashboardPage} />
+        <Route path={match.url} component={AdminPage} />
       </Switch>
     </div>
   );
