@@ -38,11 +38,11 @@
   }
 
   &__icon-badge {
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     position: absolute;
-    top: -5px;
-    right: 0;
+    top: -2px;
+    right: -1px;
     background-color: red;
     color: white;
     border-radius: 50%;
@@ -53,8 +53,8 @@
   }
 
   &__avatar {
-    height: 36px;
-    width: 36px;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
     cursor: pointer;
   }

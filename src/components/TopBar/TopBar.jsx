@@ -1,6 +1,5 @@
 import React from 'react';
 import './TopBar.scss';
-import { NotificationsNone } from '@material-ui/icons';
 
 TopBar.propTypes = {};
 
@@ -18,7 +17,7 @@ function TopBar(props) {
         <div className="top-bar__right">
           <button className="top-bar__button">Add Products</button>
           <div className="top-bar__icons">
-            <NotificationsNone />
+            <i class="far fa-bell"></i>
             <span className="top-bar__icon-badge">1</span>
           </div>
 
