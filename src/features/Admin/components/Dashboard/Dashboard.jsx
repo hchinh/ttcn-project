@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import './Dashboard.scss';
 
 Dashboard.propTypes = {};
 
 function Dashboard(props) {
-  return <div>DashBoard</div>;
+  return <div className="dashboard">DashBoard</div>;
 }
 
 export default Dashboard;

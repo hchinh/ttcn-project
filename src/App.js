@@ -1,11 +1,10 @@
 import AdminFeature from 'features/Admin';
 import LoginPage from 'features/Auth/pages/LoginPage';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Switch>
         <Redirect from="/" to="/login" exact />
 
