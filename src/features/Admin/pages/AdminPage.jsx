@@ -17,7 +17,7 @@ function AdminPage(props) {
   return (
     <div>
       <TopBar />
-      <div className="container">
+      <div className="main-contain">
         <SideBar />
         <Switch>
           <Route path="/admin" exact>

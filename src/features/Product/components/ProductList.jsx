@@ -1,25 +1,24 @@
-import React, { useState,useEffect } from 'react';
-import axios from 'axios'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import queryString from 'query-string';
 import { formatPrice } from 'utils';
 
-
 function ProductList(props) {
-    const [products, setproducts] = useState([])
-    const [filters,setFilters]=useState({
-        _limit:12,
-        _start:10,
-    })
-    useEffect(() => {
-        const paramsString = queryString.stringify(filters);  
-        const getApi = `https://api-mts.herokuapp.com/products?${paramsString}`
-        axios.get(getApi).then((response) =>{
-            setproducts(response.data)
-        })
-    }, [])
-    return (
-        <div className="grid__column-10">
-            {/* <div id="slider">
+  const [products, setproducts] = useState([]);
+  const [filters, setFilters] = useState({
+    _limit: 12,
+    _start: 10,
+  });
+  useEffect(() => {
+    const paramsString = queryString.stringify(filters);
+    const getApi = `https://api-mts.herokuapp.com/products?${paramsString}`;
+    axios.get(getApi).then((response) => {
+      setproducts(response.data);
+    });
+  }, []);
+  return (
+    <div className="grid__column-10">
+      {/* <div id="slider">
                 <figure>
                         <img src="https://cdn.techzones.vn/Data/Sites/1/News/2177/techzones-chien-game-nang-tren-man-hinh-2k-va-4k-dau-tu-pc-bao-nhieu-la-hop-ly-.jpg" class="slider_img" alt=""/>
                         <img src="https://hocspringmvc.net/wp-content/uploads/2020/12/pc.jpg" class="slider_img" alt=""/>
@@ -47,9 +46,8 @@ function ProductList(props) {
                         ))} 
                    
                 </div>
+              </div>
             </div>
-          
-        </div>
-    );
+  );
 }
 export default ProductList;
