@@ -1,5 +1,5 @@
 import React from 'react';
-import'./product.css'
+import styles from './product.module.css'
 import SliderBar from './components/Nav'
 import ProductList from './components/ProductList';
 import PromtionSlider from './components/PromtionSlider'
@@ -9,7 +9,7 @@ function Product(props) {
     return (
         <React.Fragment>
         <NavBar/> 
-       <div className="container">
+       <div className={styles.container}>
            <div className="grid">
                <div className="grid__row app__content">
                    <SliderBar />
