@@ -2,8 +2,11 @@ import React from 'react';
 import ProductInfor from './components/ProductInfor';
 import {Link} from "react-router-dom"
 import ProductRelated from './components/ProductRelated'
+import NavBar from 'components/Header';
 function ProductDetail(props) {
     return (
+        <React.Fragment>
+        <NavBar/>
         <div className="container container_productDetails">
                 <div className="grid__row">
                     <div className="grid__column5 grid_border">
@@ -18,6 +21,7 @@ function ProductDetail(props) {
                     <div className= "RelatedWapper"><ProductRelated/></div>
                 </div>
          </div>
+        </React.Fragment>
     );
 }
 

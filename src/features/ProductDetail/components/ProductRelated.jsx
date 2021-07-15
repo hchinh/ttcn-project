@@ -12,6 +12,18 @@ function ProductRelated(props) {
                         <img src="https://s3.amazonaws.com/redqteam.com/pickbazar/books/the_princeton_thumb.png" className="ProductItemImg"/> 
                         <div className="ProductItemName">Xin chào</div>
                     </div>
+                    <div className="ProductItemWrapper">
+                        <img src="https://s3.amazonaws.com/redqteam.com/pickbazar/books/the_princeton_thumb.png" className="ProductItemImg"/> 
+                        <div className="ProductItemName">Xin chào</div>
+                    </div>
+                    <div className="ProductItemWrapper">
+                        <img src="https://s3.amazonaws.com/redqteam.com/pickbazar/books/the_princeton_thumb.png" className="ProductItemImg"/> 
+                        <div className="ProductItemName">Xin chào</div>
+                    </div>
+                    <div className="ProductItemWrapper">
+                        <img src="https://s3.amazonaws.com/redqteam.com/pickbazar/books/the_princeton_thumb.png" className="ProductItemImg"/> 
+                        <div className="ProductItemName">Xin chào</div>
+                    </div>
                 </div>
             </div>
         </React.Fragment>
