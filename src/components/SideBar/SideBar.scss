@@ -2,7 +2,8 @@
   flex: 1;
   background-color: white;
   position: sticky;
-  top: 50px;
+  top: 100px;
+  height: calc(100vh - 100px);
 
   &__wrapper {
     padding: 20px;
