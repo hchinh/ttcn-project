@@ -1,0 +1,13 @@
+.sliderCoupon{
+    width: 100%;
+    display: block;
+    padding: 60px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    border-bottom: 1px solid rgb(241, 241, 241);
+    padding-left: 70px;
+}
+.imgCoupon{
+    width: 386px;
+    height:180px;
+}

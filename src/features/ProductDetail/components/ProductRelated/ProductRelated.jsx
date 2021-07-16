@@ -2,12 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import queryString from 'query-string';
 import { formatPrice } from 'utils';
-import styles from '../product.module.css';
-
-function ProductList(props) {
-  const [products, setproducts] = useState([]);
-  const [filters, setFilters] = useState({
-    _limit: 12,
+import styles from './ProductRelated.module.css'
+function ProductRelated(props) {
+    const [products, setproducts] = useState([]);
+    const [filters, setFilters] = useState({
+    _limit: 5,
     _start: 10,
   });
   useEffect(() => {
@@ -17,9 +16,11 @@ function ProductList(props) {
       setproducts(response.data);
     });
   }, []);
-  return (
-    <div className={styles.grid__column10}>
-            <div className={styles.home__product}> 
+    return (
+        <div className={styles}>
+            <div className={styles.header}>Sản phẩm liên quan</div>
+            <div className={styles.grid__column10}>
+             <div className={styles.home__product}>     
                 <div className={styles.grid__row}>       
                         {products.map((item)=>(
                         <div className={styles.grid__column24}>     
@@ -39,6 +40,7 @@ function ProductList(props) {
                 </div>
               </div>
             </div>
-  );
+        </div>
+    );
 }
-export default ProductList;
+export default ProductRelated;
