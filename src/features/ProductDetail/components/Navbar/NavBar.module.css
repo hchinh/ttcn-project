@@ -1,0 +1,25 @@
+.navBar {
+    padding: 20px 30px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    /* justify-content: space-between; */
+    position: fixed;
+    z-index: 99999;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 6%) 0px 1px 2px; 
+    transition: all 0.3s ease 0s;
+}
+.header {
+    line-height: 43px;
+    color: #33cccc;
+    font-size:30px;
+    margin-left:23px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: "Dancing Script";
+}

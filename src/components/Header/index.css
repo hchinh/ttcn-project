@@ -20,17 +20,25 @@
     top: 0px;
     left: 0px;
     width: 100%;
-    background-color: rgb(255, 255, 255);
-    box-shadow: rgb(0 0 0 / 6%) 0px 1px 2px;
+    background-color: transparent;
+    /* box-shadow: rgb(0 0 0 / 6%) 0px 1px 2px; */
     transition: all 0.3s ease 0s;
 }
+.navBar.active{
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 6%) 0px 1px 2px;
+}
+
 .header {
     line-height: 43px;
-    color: #333;
-    font-size:24px;
+    color: #33CCCC;
+    /* color: #00CC99; */
+    /* #00CC99 */
+    font-size:30px;
     margin-left:23px;
     text-decoration: none;
     font-weight: 600;
+    font-family: "Dancing Script";
 }
 .list {
     margin-left : 20px;
@@ -45,11 +53,11 @@
     border: none;
     font-size: 17px;
     padding-left: 10px;
-    background-color:rgb(247, 247, 247);
+    background-color:rgb(240, 240, 240);
 }
 .searchBox{
     margin: 0px 30px;
-    background-color: rgb(247, 247, 247);
+    background-color: rgb(240, 240, 240);
     height: 43px;
     width: 45%;
     padding: 3px 3px;
@@ -68,7 +76,7 @@
     min-height: 34px;
     color: #333;
     border: none;
-    background-color:rgb(247, 247, 247);
+    background-color:rgb(240, 240, 240);
     line-height: 37px;
     font-size: 17px;
 }
@@ -84,7 +92,7 @@
     text-decoration: none;
     color: #fff
 }
-.list span{
+/* .list span{
     font-weight: 600;
 }
 .list_category{
@@ -149,4 +157,4 @@
     letter-spacing: 2px;
     font-size: 600;
     color:#333e48;
-}
+} */
