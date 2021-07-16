@@ -27,7 +27,6 @@ function Product(props) {
        </div>
        <Footer/>
         </React.Fragment>
-        
     );
 }
 
