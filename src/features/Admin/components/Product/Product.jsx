@@ -15,15 +15,15 @@ function Product(props) {
   const [productList, setProductList] = useState();
   const [pagination, setPagination] = useState({
     page: 1,
-    limit: 15,
-    total: 15,
+    limit: 20,
+    total: 20,
   });
   const queryParams = useMemo(() => {
     const params = queryString.parse(location.search);
     return {
       ...params,
       _page: Number.parseInt(params._page) || 1,
-      _limit: Number.parseInt(params._limit) || 15,
+      _limit: Number.parseInt(params._limit) || 20,
     };
   }, [location.search]);
 
@@ -50,9 +50,20 @@ function Product(props) {
     });
   };
 
+  const handleFiltersChange = (newFilters) => {
+    const filters = {
+      ...queryParams,
+      ...newFilters,
+    };
+    history.push({
+      pathname: history.location.pathname,
+      search: queryString.stringify(filters),
+    });
+  };
+
   return (
     <div className="product">
-      <ProductFilters />
+      <ProductFilters onChange={handleFiltersChange} />
       <ProductList data={productList} />
       <div className="product__pagination">
         <Pagination
