@@ -1,0 +1,19 @@
+.product-filters {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  background-color: white;
+  height: 128px;
+  margin-bottom: 30px;
+  padding: 40px;
+  border-radius: 7px;
+
+  &__title {
+    color: #161f6a;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 0 8px;
+    margin-right: 60px;
+  }
+}
