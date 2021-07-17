@@ -18,11 +18,21 @@ function ProductFilters({ onChange }) {
     };
     onChange(newFilters);
   };
+
+  const handleSortChange = (newSort) => {
+    if (!onChange) return;
+
+    const newFilters = {
+      _sort: newSort,
+    };
+    onChange(newFilters);
+  };
+
   return (
     <div className="product-filters">
       <span className="product-filters__title">Products</span>
       <FilterByCategory onChange={handleCategoryChange} />
-      <SortByPrice />
+      <SortByPrice onChange={handleSortChange} />
       <SearchByName />
     </div>
   );

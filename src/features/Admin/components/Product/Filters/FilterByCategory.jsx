@@ -1,7 +1,7 @@
 import categoryApi from 'api/categoryApi';
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
-import './FilterByCategory.scss';
+import './Filters.scss';
 
 FilterByCategory.propTypes = {
   onChange: PropTypes.func,
