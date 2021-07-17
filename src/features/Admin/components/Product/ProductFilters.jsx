@@ -28,12 +28,21 @@ function ProductFilters({ onChange }) {
     onChange(newFilters);
   };
 
+  const handleSearch = (newSearch) => {
+    if (!onChange) return;
+
+    const newFilters = {
+      productName_contains: newSearch,
+    };
+    onChange(newFilters);
+  };
+
   return (
     <div className="product-filters">
       <span className="product-filters__title">Products</span>
       <FilterByCategory onChange={handleCategoryChange} />
       <SortByPrice onChange={handleSortChange} />
-      <SearchByName />
+      <SearchByName onChange={handleSearch} />
     </div>
   );
 }
