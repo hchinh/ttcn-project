@@ -50,8 +50,8 @@
   .home__productitems::before {
     content: '';
     position: absolute;
-    top: -2px;
-    left: -2px;
+    top: 0px;
+    left: 0px;
     width: 0;
     height: 0;
     background: transparent;
@@ -89,8 +89,8 @@
   .home__productitems::after {
     content: '';
     position: absolute;
-    top: -2px;
-    left: -2px;
+    top: 0px;
+    left: 0px;
     width: 0;
     height: 0;
     background: transparent;

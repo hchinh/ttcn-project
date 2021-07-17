@@ -3,25 +3,16 @@ import axios from 'axios';
 import queryString from 'query-string';
 import { formatPrice } from 'utils';
 import styles from '../product.module.css';
-
-function ProductList(props) {
-  const [products, setproducts] = useState([]);
-  const [filters, setFilters] = useState({
-    _limit: 12,
-    _start: 10,
-  });
-  useEffect(() => {
-    const paramsString = queryString.stringify(filters);
-    const getApi = `https://api-mts.herokuapp.com/products?${paramsString}`;
-    axios.get(getApi).then((response) => {
-      setproducts(response.data);
-    });
-  }, []);
+import PropTypes from 'prop-types';
+ProductList.propTypes = {
+  data: PropTypes.array,
+};
+function ProductList({ data=[]}) {
   return (
     <div className={styles.grid__column10}>
             <div className={styles.home__product}> 
                 <div className={styles.grid__row}>       
-                        {products.map((item)=>(
+                        {data.map((item)=>(
                         <div className={styles.grid__column24}>     
                             <div className={styles.home__productitems}>
                                 <div className={styles.home__productitemsimg} style={{ backgroundImage: `url(${item.productThumbnail})` }}></div>

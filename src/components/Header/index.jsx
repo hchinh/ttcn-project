@@ -14,7 +14,6 @@ function NavBar(props) {
     window.addEventListener('scroll',changeBackgroundColor)
     return (
         <div className={navBar ? "navBar active ":"navBar "}>
-            {console.log(navBar)}
             <Link to={"/"}className="header">PickBazar</Link>
             <SearchForm/>
         </div>
