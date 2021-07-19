@@ -1,6 +1,3 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import queryString from 'query-string';
 import { formatPrice } from 'utils';
 import styles from '../product.module.css';
 import PropTypes from 'prop-types';

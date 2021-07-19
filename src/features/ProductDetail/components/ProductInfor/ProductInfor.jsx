@@ -1,15 +1,5 @@
-import React, { useState,useEffect } from 'react';
-import axios from 'axios'
 import styles from '../../ProductDetail.module.css'
 function ProductInfor(props) {
-    const [InforProduct, setInforProduct] = useState([])
-    useEffect(() => {
-        const getApi = "https://api-mts.herokuapp.com/products"
-        axios.get(getApi).then((response) =>{
-            setInforProduct(response.data)  
-            console.log(response.data)
-        })
-    }, [])
     return (
         <div>    
             <h4 className={styles.ProductName}>Laptop APPLE MacBook Pro 2020 MYD92SA/A ( 13.3\" Apple M1/8GB/512GB SSD/macOS/1.4kg)</h4>

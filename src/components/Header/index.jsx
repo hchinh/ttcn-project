@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './index.css'
-import SearchForm from './components/SearchForm'
+// import SearchForm from './components/SearchForm'
 import { Link } from 'react-router-dom';
 function NavBar(props) {
     const [navBar, setnavBar] = useState(false)
@@ -15,7 +15,7 @@ function NavBar(props) {
     return (
         <div className={navBar ? "navBar active ":"navBar "}>
             <Link to={"/"}className="header">PickBazar</Link>
-            <SearchForm/>
+            {/* <SearchForm/> */}
         </div>
     );
 }

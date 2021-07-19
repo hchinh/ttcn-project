@@ -5,7 +5,6 @@ import './App.css';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import Product from './features/Product/product.jsx';
 import ProductDetail from './features/ProductDetail/ProductDetail';
-import Test from './Test'
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
         <Route path="/productDetails" exact component={ProductDetail} />
         <Route path="/:somestring" component={ErrorPage} />
       </Switch>
-      {/* <Test/> */}
     </div>
   );
 }
