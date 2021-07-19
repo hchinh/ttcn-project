@@ -7,23 +7,38 @@ const categoryApi = {
   },
 
   get(id) {
-    const url = `/categories/:${id}`;
+    const url = `/categories/${id}`;
     return axiosClient.get(url);
   },
 
   add(data) {
-    const url = `/categories/:${data.id}`;
-    return axiosClient.post(url, data);
+    const url = '/categories';
+    const token = {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('access-token')}`,
+      },
+    };
+    return axiosClient.post(url, data, token);
   },
 
   update(data) {
-    const url = `/categories/:${data.id}`;
-    return axiosClient.patch(url, data);
+    const url = `/categories/${data.id}`;
+    const token = {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('access-token')}`,
+      },
+    };
+    return axiosClient.put(url, data, token);
   },
 
   remove(id) {
     const url = `/categories/:${id}`;
-    return axiosClient.delete(url);
+    const token = {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('access-token')}`,
+      },
+    };
+    return axiosClient.delete(url, token);
   },
 };
 

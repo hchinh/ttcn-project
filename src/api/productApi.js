@@ -32,7 +32,7 @@ const productApi = {
   },
 
   get(id) {
-    const url = `/products/:${id}`;
+    const url = `/products/${id}`;
     return axiosClient.get(url);
   },
 
@@ -47,13 +47,23 @@ const productApi = {
   },
 
   update(data) {
-    const url = `/products/:${data.id}`;
-    return axiosClient.patch(url, data);
+    const url = `/products/${data.id}`;
+    const token = {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('access-token')}`,
+      },
+    };
+    return axiosClient.put(url, data, token);
   },
 
   remove(id) {
     const url = `/products/:${id}`;
-    return axiosClient.delete(url);
+    const token = {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('access-token')}`,
+      },
+    };
+    return axiosClient.delete(url, token);
   },
 };
 
