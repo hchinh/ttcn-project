@@ -1,9 +1,26 @@
-import React from 'react';
+import { IconButton } from '@material-ui/core';
+import Dialog from '@material-ui/core/Dialog';
+import DialogContent from '@material-ui/core/DialogContent';
+import { Close } from '@material-ui/icons';
+import AddProduct from 'features/CRUD/components/AddProduct/AddProduct';
+import React, { useState } from 'react';
 import './TopBar.scss';
 
 TopBar.propTypes = {};
 
 function TopBar(props) {
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (e, reason) => {
+    if (reason === 'backdropClick') return;
+
+    setOpen(false);
+  };
+
   return (
     <div className="top-bar">
       <div className="top-bar__wrapper">
@@ -15,7 +32,9 @@ function TopBar(props) {
           />
         </div>
         <div className="top-bar__right">
-          <button className="top-bar__button">Add Products</button>
+          <button className="top-bar__button" onClick={handleClickOpen}>
+            Add Products
+          </button>
           <div className="top-bar__icons">
             <i class="far fa-bell"></i>
             <span className="top-bar__icon-badge">1</span>
@@ -28,6 +47,19 @@ function TopBar(props) {
           />
         </div>
       </div>
+      <Dialog
+        disableEscapeKeyDown
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="form-dialog-title"
+      >
+        <IconButton className="dialog__close-button" onClick={handleClose}>
+          <Close />
+        </IconButton>
+        <DialogContent>
+          <AddProduct closeDialog={handleClose} />
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

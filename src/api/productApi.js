@@ -37,8 +37,13 @@ const productApi = {
   },
 
   add(data) {
-    const url = `/products/:${data.id}`;
-    return axiosClient.post(url, data);
+    const url = '/products';
+    const token = {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('access-token')}`,
+      },
+    };
+    return axiosClient.post(url, data, token);
   },
 
   update(data) {
