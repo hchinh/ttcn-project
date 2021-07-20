@@ -31,7 +31,7 @@ axiosClient.interceptors.response.use(
     // Any status codes that falls outside the range of 2xx cause this function to trigger
     // Do something with response error
     const { config, status, data } = error.response;
-    const URLS = ['/auth/local/register', '/auth/local'];
+    const URLS = ['/auth/local/register', '/auth/local', '/products'];
     if (URLS.includes(config.url) && status === 400) {
       const errorList = data.data || [];
       const firstError = errorList.length > 0 ? errorList[0] : {};

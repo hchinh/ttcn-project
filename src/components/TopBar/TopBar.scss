@@ -73,3 +73,14 @@
     margin-right: 32px;
   }
 }
+
+.dialog {
+  &__close-button {
+    position: 'absolute';
+    align-self: flex-end;
+    top: 4px;
+    right: 4px;
+    color: grey;
+    z-index: 1;
+  }
+}
