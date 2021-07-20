@@ -6,6 +6,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import './Product.scss';
 import ProductFilters from './ProductFilters';
 import ProductList from './ProductList';
+import ProductSkeletonList from './ProductSkeletonList';
 
 Product.propTypes = {};
 
@@ -18,6 +19,8 @@ function Product(props) {
     limit: 20,
     total: 20,
   });
+  const [loading, setLoading] = useState(true);
+
   const queryParams = useMemo(() => {
     const params = queryString.parse(location.search);
     return {
@@ -36,6 +39,8 @@ function Product(props) {
       } catch (error) {
         console.log('Failed to fetch product list: ', error);
       }
+
+      setLoading(false);
     })();
   }, [queryParams]);
 
@@ -64,7 +69,11 @@ function Product(props) {
   return (
     <div className="product">
       <ProductFilters onChange={handleFiltersChange} />
-      <ProductList data={productList} />
+      {loading ? (
+        <ProductSkeletonList length={12} />
+      ) : (
+        <ProductList data={productList} />
+      )}
       <div className="product__pagination">
         <Pagination
           color="primary"
