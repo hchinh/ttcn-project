@@ -32,7 +32,7 @@ const categoryApi = {
   },
 
   remove(id) {
-    const url = `/categories/:${id}`;
+    const url = `/categories/${id}`;
     const token = {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('access-token')}`,

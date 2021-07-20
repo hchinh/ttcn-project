@@ -57,7 +57,7 @@ const productApi = {
   },
 
   remove(id) {
-    const url = `/products/:${id}`;
+    const url = `/products/${id}`;
     const token = {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('access-token')}`,
