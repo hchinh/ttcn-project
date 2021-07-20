@@ -47,6 +47,20 @@ function Coupon(props) {
             className={styles.imgCoupon}
           />
         </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src="http://pics.gmarket.co.kr/mobile.global/welcome_cp2_en.png"
+            alt="CouponImg"
+            className={styles.imgCoupon}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYhzGgwXqRoNA9I3rX38iUWY9G-1-uV0B8yg&usqp=CAU"
+            alt="CouponImg"
+            className={styles.imgCoupon}
+          />
+        </SwiperSlide>
       </Swiper>
     </div>
   );

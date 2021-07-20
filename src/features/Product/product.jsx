@@ -12,6 +12,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import queryString from 'query-string';
 import ProductFilters from './components/ProductFilters/ProductFilter';
  import ClipLoader from "react-spinners/ClipLoader";
+ import ProductSkeletonList from './ProductSkeletonList';
 function Product(props) {
     const location = useLocation();
     const history = useHistory();
@@ -22,6 +23,7 @@ function Product(props) {
       total: 12,
     });
     const [loading, setLoading] = useState(false);
+    const [productLoading, setProductLoading] = useState(true);
     useEffect(() => {
      setLoading(true)
      setTimeout(()=>{
@@ -46,6 +48,7 @@ function Product(props) {
           } catch (error) {
             console.log('Failed to fetch product list: ', error);
           }
+          setProductLoading(false)
         })();
       }, [queryParams]);
     
@@ -93,7 +96,11 @@ function Product(props) {
              <div className={styles.grid}>
                   <div className={styles.grid__row}>
                      {/* <SliderBar /> */}
-                     {<ProductList data={productList} />}   
+                     {loading ? (
+                         <ProductSkeletonList length={12} />
+                          ) : (
+                         <ProductList data={productList} />
+                      )}  
                   </div>
                      <div className="product__pagination">
                       <Pagination
