@@ -1,6 +1,7 @@
 import { formatPrice } from 'utils';
 import styles from '../product.module.css';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 ProductList.propTypes = {
   data: PropTypes.array,
 };
@@ -11,7 +12,7 @@ function ProductList({ data=[]}) {
                 <div className={styles.grid__row}>       
                         {data.map((item)=>(
                         <div className={styles.grid__column24}>     
-                            <div className={styles.home__productitems}>
+                            <Link to={`/productDetails/${item.id}`} className={styles.home__productitems}>
                                 <div className={styles.home__productitemsimg} style={{ backgroundImage: `url(${item.productThumbnail})` }}></div>
                                 <h4 className={styles.home__productitemsname}>{item.productName}</h4>
                                 <div className={styles.home__productprice}>
@@ -20,7 +21,7 @@ function ProductList({ data=[]}) {
                                     <i class="fas fa-shopping-cart"></i>    
                                     Cart</button>
                                 </div>
-                            </div>
+                            </Link>
                         </div>    
                         ))} 
                    

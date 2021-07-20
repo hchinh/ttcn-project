@@ -30,7 +30,7 @@ function FilterByCategory({ onChange }) {
     }
   };
   return (
-    <div className="filter-products">
+    <div className={styles.filterproducts}>
       <select className={styles.filterproducts__box} onChange={handleCategoryChange}>
         <option hidden>Category Type</option>
         {categoryList.map((category) => (
