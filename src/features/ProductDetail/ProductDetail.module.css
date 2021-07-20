@@ -54,10 +54,11 @@
     color: rgb(119, 121, 140);
 }
 .product_img {
-    margin-top: -110px;
+    /* margin-top: -110px; */
     display: block;
     max-width: 100%;
     height: auto;
+    margin-top:20px;
 }
 .grid_infor {
     align-items: start;

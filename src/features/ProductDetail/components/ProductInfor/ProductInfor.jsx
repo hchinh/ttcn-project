@@ -1,21 +1,37 @@
 import styles from '../../ProductDetail.module.css'
+import React,{ useEffect,useState } from 'react';
+import axios from 'axios';
+import { formatPrice } from 'utils';
+import { useParams } from 'react-router-dom';
 function ProductInfor(props) {
-    return (
-        <div>    
-            <h4 className={styles.ProductName}>Laptop APPLE MacBook Pro 2020 MYD92SA/A ( 13.3\" Apple M1/8GB/512GB SSD/macOS/1.4kg)</h4>
+    const [product, setproduct] = useState(null);
+    const { id } = useParams();
+   
+  useEffect(() => {
+    if (id) {
+        const getApi = `https://api-mts.herokuapp.com/products/${id}`;
+        axios.get(getApi).then((response) => {
+            setproduct(response.data);
+        });
+    }
+}, [id]);
+return (
+    <div>
+            {console.log(product)}
+            <h4 className={styles.ProductName}>{product?.productName}</h4>
             <h5 className={styles.ProductBand}> 
-            <i class="fab fa-apple"></i>
-            Apple
+            {/* <i class="fab fa-apple"></i> */}
+            {product?.brand}
             </h5>
-            <p className={styles.ProductDescription}>LaptopMacBook Pro 2020 13.3" Z11B000CT (M1/16GB/SSD256GB) (Xám) là sản phẩm nổi bật của MacBook. Sở hữu những điểm nổi bật độc đáo của riêng dòng MacBook Pro và hiệu năng đỉnh cao với chip Apple M1, chiếc Laptop này mang đến cho bạn khả năng xử lý các tác vụ nặng nhanh chóng, mượt mà.</p>
+            <p className={styles.ProductDescription}>{product?.productDescription}</p>
             <div className={styles.ProductTable}>
                 <div className={styles.ProductTableRow}>
                     <span className={styles.ProductItem}>Brand</span>
-                    <span className={styles.ProductItem}>Apple</span>
+                    <span className={styles.ProductItem}>{product?.brand}</span>
                 </div>
                 <div className={styles.ProductTableRow}>
                     <span className={styles.ProductItem}>Loại</span>
-                    <span className={styles.ProductItem}>Laptop</span>
+                    <span className={styles.ProductItem}>{product?.category.categoryName}</span>
                 </div>
                 <div className={styles.ProductTableRow}>
                     <span className={styles.ProductItem}>Nước</span>
@@ -28,7 +44,7 @@ function ProductInfor(props) {
                
             </div>
             <div className={styles.ProductCartWapper}>
-                <div className={styles.ProductPriceWapper}>25.000đ</div>
+                <div className={styles.ProductPriceWapper}>{formatPrice(product?.salePrice)}</div>
                 <button className={styles.btn_cart}>
                 <i class="fas fa-shopping-cart"></i>
                 Cart</button>

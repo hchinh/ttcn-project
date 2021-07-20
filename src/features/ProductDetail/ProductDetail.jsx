@@ -6,6 +6,8 @@ import styles from './ProductDetail.module.css'
 import NavBar from './components/Navbar/NavBar';
 import Footer from 'features/Product/components/Footer/Footer';
 import ClipLoader from "react-spinners/ClipLoader";
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 function ProductDetail(props) {
     const [loading, setLoading] = useState(false);
     useEffect(() => {
@@ -14,6 +16,17 @@ function ProductDetail(props) {
        setLoading(false)
      },2000)
     }, [])
+    const [product, setproduct] = useState(null);
+    const { id } = useParams();
+   
+  useEffect(() => {
+    if (id) {
+        const getApi = `https://api-mts.herokuapp.com/products/${id}`;
+        axios.get(getApi).then((response) => {
+            setproduct(response.data);
+        });
+    }
+}, [id]);
     return (
         <React.Fragment>
              {
@@ -37,7 +50,7 @@ function ProductDetail(props) {
                             <i class="fas fa-arrow-left"></i>
                             Back</Link>
                         </div>
-                        <img src="https://lh3.googleusercontent.com/RovQGEtNc5NHaWqaY4d3T4J8j0ePXkJcv9I95UDmit-o6Y4yz8R_ORCJgeBWwnhmGenYyqlm4dgUnGbCi2J4GIDxfFo6fyvx=w500-rw" alt="" className="product_img" />
+                        <img src={product?.productThumbnail} alt="" className={styles.product_img} />
                     </div>
                     <div className={styles.grid__column5} ><ProductInfor/></div>
                     <div className= {styles.RelatedWapper}><ProductRelated/></div>
