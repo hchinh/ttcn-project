@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import adminApi from 'api/adminApi';
+import StorageKeys from 'constants/storage-keys';
 
 export const login = createAsyncThunk('admin/login', async (payload) => {
   const data = await adminApi.login(payload);
 
-  localStorage.setItem('access-token', data.jwt);
-  localStorage.setItem('user', JSON.stringify(data.user));
+  localStorage.setItem(StorageKeys.TOKEN, data.jwt);
+  localStorage.setItem(StorageKeys.USER, JSON.stringify(data.user));
 
   return data.user;
 });
@@ -13,9 +14,16 @@ export const login = createAsyncThunk('admin/login', async (payload) => {
 const authSlice = createSlice({
   name: 'admin',
   initialState: {
-    current: JSON.parse(localStorage.getItem('user')) || {},
+    current: JSON.parse(localStorage.getItem(StorageKeys.USER)) || {},
   },
-  reducers: {},
+  reducers: {
+    logout(state) {
+      localStorage.removeItem(StorageKeys.USER);
+      localStorage.removeItem(StorageKeys.TOKEN);
+
+      state.current = {};
+    },
+  },
   extraReducers: {
     [login.fulfilled]: (state, action) => {
       state.current = action.payload;
@@ -23,5 +31,6 @@ const authSlice = createSlice({
   },
 });
 
-const { reducer } = authSlice;
+const { actions, reducer } = authSlice;
+export const { logout } = actions;
 export default reducer;
