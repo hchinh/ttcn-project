@@ -134,13 +134,6 @@ const latestOrders = {
   ],
 };
 
-const orderStatus = {
-  shipping: 'primary',
-  pending: 'warning',
-  paid: 'success',
-  refund: 'danger',
-};
-
 const renderOrderHead = (item, index) => <th key={index}>{item}</th>;
 
 const renderOrderBody = (item, index) => (
