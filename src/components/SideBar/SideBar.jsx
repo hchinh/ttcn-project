@@ -10,7 +10,7 @@ function SideBar(props) {
         <ul className="sidebar__list">
           <li className="sidebar__list-item">
             <NavLink to="/admin">
-              <i className="fa fa-list-alt sidebar__icon"></i>
+              <i className="fas fa-chart-line sidebar__icon"></i>
               <span>Dashboard</span>
             </NavLink>
           </li>
