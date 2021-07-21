@@ -6,10 +6,12 @@ import ErrorPage from './components/ErrorPage/ErrorPage';
 import Product from './features/Product/product.jsx';
 import ProductDetail from './features/ProductDetail/ProductDetail';
 import Cart from "./components/Cart/Cart"
+import Login from "./features/Login/Login"
 function App() {
   return (
     <div>
       <Switch>
+      <Route path="/login1" component={Login} />
         <Route path="/login" component={LoginPage} />
         <Route path="/admin" component={AdminFeature} />
         <Route path="/" exact component={Product} />
