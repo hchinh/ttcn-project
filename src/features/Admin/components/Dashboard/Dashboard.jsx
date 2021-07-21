@@ -1,11 +1,12 @@
 import { Grid } from '@material-ui/core';
 import statusCards from 'assets/data/card-data.json';
 import StatusCard from 'components/StatusCard/StatusCard';
+import Table from 'components/Table/Table';
 import React from 'react';
-import './Dashboard.scss';
 import Chart from 'react-apexcharts';
-
-Dashboard.propTypes = {};
+import { Link } from 'react-router-dom';
+import { formatPrice } from 'utils';
+import './Dashboard.scss';
 
 const chartOptions = {
   series: [
@@ -51,7 +52,110 @@ const chartOptions = {
   },
 };
 
-function Dashboard(props) {
+const topCustomers = {
+  header: ['user', 'total orders', 'total spending'],
+  body: [
+    {
+      username: 'frank lampard',
+      order: '490',
+      price: formatPrice(35000000),
+    },
+    {
+      username: 'didier drogba',
+      order: '250',
+      price: formatPrice(22000000),
+    },
+    {
+      username: 'ashley cole',
+      order: '120',
+      price: formatPrice(21000000),
+    },
+    {
+      username: 'john terry',
+      order: '110',
+      price: formatPrice(16000000),
+    },
+    {
+      username: 'pert cech',
+      order: '80',
+      price: formatPrice(12000000),
+    },
+  ],
+};
+
+const renderCustomerHead = (item, index) => <th key={index}>{item}</th>;
+
+const renderCustomerBody = (item, index) => (
+  <tr key={index}>
+    <td>{item.username}</td>
+    <td>{item.order}</td>
+    <td>{item.price}</td>
+  </tr>
+);
+
+const latestOrders = {
+  header: ['order ID', 'user', 'total price', 'date', 'status'],
+  body: [
+    {
+      id: '#OD1716',
+      user: 'frank lampard',
+      date: '21 Jul 2021',
+      price: formatPrice(400000),
+      status: 'shipping',
+    },
+    {
+      id: '#OD1715',
+      user: 'pert cech',
+      date: '19 Jul 2021',
+      price: formatPrice(100000),
+      status: 'paid',
+    },
+    {
+      id: '#OD1714',
+      user: 'didier drogba',
+      date: '15 Jul 2021',
+      price: formatPrice(150000),
+      status: 'pending',
+    },
+    {
+      id: '#OD1713',
+      user: 'pert cech',
+      date: '12 Jul 2021',
+      price: formatPrice(177000),
+      status: 'paid',
+    },
+    {
+      id: '#OD1712',
+      user: 'john terry',
+      date: '25 Jun 2021',
+      price: formatPrice(280000),
+      status: 'refund',
+    },
+  ],
+};
+
+const orderStatus = {
+  shipping: 'primary',
+  pending: 'warning',
+  paid: 'success',
+  refund: 'danger',
+};
+
+const renderOrderHead = (item, index) => <th key={index}>{item}</th>;
+
+const renderOrderBody = (item, index) => (
+  <tr>
+    <td>{item.id}</td>
+    <td>{item.user}</td>
+    <td>{item.date}</td>
+    <td>{item.price}</td>
+    <td>
+      <span>{item.status}</span>
+    </td>
+  </tr>
+);
+
+function Dashboard() {
   return (
     <div className="dashboard">
       <h3 className="dashboard__header">Dashboard</h3>
@@ -77,6 +181,42 @@ function Dashboard(props) {
               type="line"
               height="100%"
             />
+          </div>
+        </Grid>
+        <Grid item lg={4}>
+          <div className="dashboard__card">
+            <div className="dashboard__card__header">
+              <h3>top customers</h3>
+            </div>
+            <div className="dashboard__card__body">
+              <Table
+                headData={topCustomers.header}
+                renderHead={(item, index) => renderCustomerHead(item, index)}
+                bodyData={topCustomers.body}
+                renderBody={(item, index) => renderCustomerBody(item, index)}
+              />
+            </div>
+            <div className="dashboard__card__footer">
+              <Link to="/admin">view all</Link>
+            </div>
+          </div>
+        </Grid>
+        <Grid item lg={8}>
+          <div className="dashboard__card">
+            <div className="dashboard__card__header">
+              <h3>latest orders</h3>
+            </div>
+            <div className="dashboard__card__body">
+              <Table
+                headData={latestOrders.header}
+                renderHead={(item, index) => renderOrderHead(item, index)}
+                bodyData={latestOrders.body}
+                renderBody={(item, index) => renderOrderBody(item, index)}
+              />
+            </div>
+            <div className="dashboard__card__footer">
+              <Link to="/admin">view all</Link>
+            </div>
           </div>
         </Grid>
       </Grid>

@@ -14,6 +14,24 @@
     background-color: white;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 15px;
+
+    &__header {
+      text-transform: capitalize;
+    }
+
+    & > div ~ div {
+      margin-top: 30px;
+    }
+
+    &__footer {
+      text-align: center;
+      text-transform: capitalize;
+      margin-top: 24px;
+
+      & > a {
+        text-decoration: none;
+      }
+    }
   }
 
   &__full-height {
