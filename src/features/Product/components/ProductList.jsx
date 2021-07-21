@@ -17,9 +17,9 @@ function ProductList({ data=[]}) {
                                 <h4 className={styles.home__productitemsname}>{item.productName}</h4>
                                 <div className={styles.home__productprice}>
                                     <span className={styles.home__productitemsprice}>{formatPrice(item.salePrice)}</span>
-                                    <button className={styles.btn_cart}>
+                                    <Link to="/cart" className={styles.btn_cart}>
                                     <i class="fas fa-shopping-cart"></i>    
-                                    Cart</button>
+                                    Cart</Link>
                                 </div>
                             </Link>
                         </div>    

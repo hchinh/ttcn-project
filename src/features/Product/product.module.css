@@ -282,6 +282,7 @@
   cursor: pointer;
   z-index: 1;
   font-family: 'Font Awesome 5 Free';
+  text-decoration: none;
 }
 .btn_cart i{
   margin-right:5px;
