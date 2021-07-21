@@ -137,7 +137,7 @@ const latestOrders = {
 const renderOrderHead = (item, index) => <th key={index}>{item}</th>;
 
 const renderOrderBody = (item, index) => (
-  <tr>
+  <tr key={index}>
     <td>{item.id}</td>
     <td>{item.user}</td>
     <td>{item.date}</td>
