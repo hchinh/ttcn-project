@@ -1,7 +1,8 @@
 import SideBar from 'components/SideBar/SideBar';
 import TopBar from 'components/TopBar/TopBar';
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import StorageKeys from 'constants/storage-keys';
+import React, { useEffect } from 'react';
+import { Route, Switch, useHistory } from 'react-router-dom';
 import Category from '../components/Category/Category';
 import Coupon from '../components/Coupon/Coupon';
 import Customer from '../components/Customer/Customer';
@@ -14,6 +15,15 @@ import './Admin.scss';
 AdminPage.propTypes = {};
 
 function AdminPage(props) {
+  const history = useHistory();
+
+  useEffect(() => {
+    const token = localStorage.getItem(StorageKeys.TOKEN);
+    if (!token) {
+      history.replace('/login');
+    }
+  });
+
   return (
     <div>
       <TopBar />
