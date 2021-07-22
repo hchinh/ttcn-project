@@ -12,9 +12,12 @@ Login.propTypes = {};
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    width: '30%',
     padding: theme.spacing(5),
     backgroundColor: '#FFFFFF',
-    margin: '140px 480px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 }));
 
