@@ -13,6 +13,7 @@ Login.propTypes = {};
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '30%',
+    height: '50%',
     padding: theme.spacing(5),
     backgroundColor: '#FFFFFF',
     display: 'flex',
