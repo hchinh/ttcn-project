@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(2),
     backgroundColor: '#00C58D',
     '&:hover': {
-      backgroundColor: '#161F6A',
+      backgroundColor: '#05e88d',
     },
   },
 

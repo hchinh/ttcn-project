@@ -1,21 +1,12 @@
 .product-item {
-  background-color: white;
-  margin: 0 4.2px 8.4px 4.2px;
-  width: 200px;
-  height: 265px;
-  border-radius: 15px;
-  text-align: center;
-  padding: 3px 8px;
-  cursor: pointer;
-
   &__thumbnail {
-    width: 180px;
+    width: 100%;
   }
 
   &__name {
     text-align: left;
     margin-bottom: 10px;
-    font-size: 13px;
+    font-size: 14px;
     display: -webkit-box;
     overflow: hidden;
     text-overflow: ellipsis;
