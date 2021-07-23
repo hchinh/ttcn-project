@@ -3,6 +3,7 @@ import adminReducer from '../features/Auth/authSlice';
 
 const rootReducer = {
   admin: adminReducer,
+  
 };
 
 const store = configureStore({

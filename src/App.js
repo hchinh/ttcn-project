@@ -7,14 +7,17 @@ import ErrorPage from './components/ErrorPage/ErrorPage';
 import Login from './features/Login/Login';
 import Product from './features/Product/product.jsx';
 import ProductDetail from './features/ProductDetail/ProductDetail';
+import Cart from "./components/Cart/Cart"
+import Login from "./features/Login/Login"
+import UserLoginPage from "./features/Auth/pages/UserLoginPage"
 function App() {
   return (
     <div>
       <Switch>
-        <Route path="/login1" component={Login} />
+        <Route path="/" exact component={Product} />
+        <Route path="/login1" component={UserLoginPage} />
         <Route path="/login" component={LoginPage} />
         <Route path="/admin" component={AdminFeature} />
-        <Route path="/" exact component={Product} />
         <Route exact path="/cart" component={Cart} />
         <Route path="/productDetails/:id" exact component={ProductDetail} />
         <Route path="/:somestring" component={ErrorPage} />

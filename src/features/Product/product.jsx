@@ -11,8 +11,9 @@ import productApi from 'api/productApi';
 import { useHistory, useLocation } from 'react-router-dom';
 import queryString from 'query-string';
 import ProductFilters from './components/ProductFilters/ProductFilter';
- import ClipLoader from "react-spinners/ClipLoader";
- import ProductSkeletonList from './ProductSkeletonList';
+import ClipLoader from "react-spinners/ClipLoader";
+import ProductSkeletonList from './ProductSkeletonList';
+
 function Product(props) {
     const location = useLocation();
     const history = useHistory();
