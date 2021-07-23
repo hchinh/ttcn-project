@@ -1,30 +1,31 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import AddProductForm from '../AddProductForm/AddProductForm';
+import categoryApi from 'api/categoryApi';
 import { useSnackbar } from 'notistack';
-import productApi from 'api/productApi';
+import PropTypes from 'prop-types';
+import React from 'react';
+import UpdateCategoryForm from '../UpdateProductForm/UpdateProductForm';
 
-AddProduct.propTypes = {
+UpdateCategory.propTypes = {
   closeDialog: PropTypes.func,
+  category: PropTypes.object,
 };
 
-function AddProduct({ closeDialog }) {
+function UpdateCategory({ closeDialog, category }) {
   const { enqueueSnackbar } = useSnackbar();
 
-  const handleSubmit = async (values) => {
+  const handleUpdate = async (values) => {
     try {
       const formValues = {
         ...values,
-        salePrice: Number.parseInt(values.salePrice),
+        id: category.id,
       };
 
-      await productApi.add(formValues);
+      await categoryApi.update(formValues);
 
       if (closeDialog) {
         closeDialog();
       }
 
-      enqueueSnackbar('Create new product successfully.', {
+      enqueueSnackbar('Update category successfully.', {
         variant: 'success',
         anchorOrigin: {
           horizontal: 'right',
@@ -32,7 +33,7 @@ function AddProduct({ closeDialog }) {
         },
       });
     } catch (error) {
-      console.log('Failed to add: ', error);
+      console.log('Failed to update: ', error);
       enqueueSnackbar(error.message, {
         variant: 'error',
         anchorOrigin: {
@@ -45,9 +46,9 @@ function AddProduct({ closeDialog }) {
 
   return (
     <div>
-      <AddProductForm onSubmit={handleSubmit} />
+      <UpdateCategoryForm onSubmit={handleUpdate} category={category} />
     </div>
   );
 }
 
-export default AddProduct;
+export default UpdateCategory;

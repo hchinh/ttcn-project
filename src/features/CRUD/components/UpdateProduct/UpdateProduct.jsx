@@ -34,7 +34,7 @@ function UpdateProduct({ closeDialog, product }) {
         },
       });
     } catch (error) {
-      console.log('Failed to register: ', error);
+      console.log('Failed to update: ', error);
       enqueueSnackbar(error.message, {
         variant: 'error',
         anchorOrigin: {
@@ -61,7 +61,7 @@ function UpdateProduct({ closeDialog, product }) {
         },
       });
     } catch (error) {
-      console.log('Failed to register: ', error);
+      console.log('Failed to delete: ', error);
       enqueueSnackbar(error.message, {
         variant: 'error',
         anchorOrigin: {
