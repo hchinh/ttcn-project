@@ -46,9 +46,9 @@ function Login(props) {
     }
   };
   return (
-    <Box className={classes.root}>
+ 
       <UserLoginForm onSubmit={handleSubmit} />
-    </Box>
+  
   );
 }
 
