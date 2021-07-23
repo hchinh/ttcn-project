@@ -26,7 +26,7 @@ function Product(props) {
   useEffect(() => {
     const token = localStorage.getItem(StorageUser.TOKEN);
     if (!token) {
-      history.replace('/login');
+      history.replace('/login1');
     }
   });
     const [loading, setLoading] = useState(false);
