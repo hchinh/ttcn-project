@@ -13,7 +13,7 @@ import queryString from 'query-string';
 import ProductFilters from './components/ProductFilters/ProductFilter';
 import ClipLoader from "react-spinners/ClipLoader";
 import ProductSkeletonList from './ProductSkeletonList';
-
+import StorageUser from 'constants/storage-user';
 function Product(props) {
     const location = useLocation();
     const history = useHistory();
@@ -23,6 +23,12 @@ function Product(props) {
       limit: 12,
       total: 12,
     });
+  useEffect(() => {
+    const token = localStorage.getItem(StorageUser.TOKEN);
+    if (!token) {
+      history.replace('/login');
+    }
+  });
     const [loading, setLoading] = useState(false);
     const [productLoading, setProductLoading] = useState(true);
     useEffect(() => {
