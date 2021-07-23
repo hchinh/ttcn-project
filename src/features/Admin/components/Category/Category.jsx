@@ -4,7 +4,9 @@ import { Close } from '@material-ui/icons';
 import categoryApi from 'api/categoryApi';
 import Table from 'components/Table/Table';
 import AddCategory from 'features/CRUD/components/AddCategory/AddCategory';
+import ConfirmationDialog from 'features/CRUD/components/ConfirmationDialog/ConfirmationDialog';
 import UpdateCategory from 'features/CRUD/components/UpdateCategory/UpdateCategory';
+import { useSnackbar } from 'notistack';
 import React, { useEffect, useState } from 'react';
 import './Category.scss';
 
@@ -14,6 +16,17 @@ const MODE = {
 };
 
 function Category() {
+  const [categoryList, setCategoryList] = useState();
+  const [open, setOpen] = useState(false);
+  const [mode, setMode] = useState(MODE.CREATE);
+  const [category, setCategory] = useState();
+  const [confirmDialog, setConfirmDialog] = useState({
+    isOpened: false,
+    title: '',
+    subTitle: '',
+  });
+  const { enqueueSnackbar } = useSnackbar();
+
   const categoryHead = ['ID', 'Name', 'Thumbnail', 'Actions'];
 
   const renderHead = (item, index) => <th key={index}>{item}</th>;
@@ -30,14 +43,22 @@ function Category() {
         >
           Edit
         </button>
-        <i className="far fa-trash-alt category__delete-icon"></i>
+        <i
+          className="far fa-trash-alt category__delete-icon"
+          onClick={() => {
+            setConfirmDialog({
+              isOpened: true,
+              title: 'Are you sure to delete this category?',
+              subTitle: "You can't undo this operation",
+              onConfirm: () => {
+                handleRemoveCategory(item);
+              },
+            });
+          }}
+        ></i>
       </td>
     </tr>
   );
-  const [categoryList, setCategoryList] = useState();
-  const [open, setOpen] = useState(false);
-  const [mode, setMode] = useState(MODE.CREATE);
-  const [category, setCategory] = useState();
 
   const handleAddOpen = () => {
     setMode(MODE.CREATE);
@@ -52,6 +73,35 @@ function Category() {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleRemoveCategory = async (item) => {
+    setConfirmDialog({
+      ...confirmDialog,
+      isOpened: false,
+    });
+    try {
+      await categoryApi.remove(item.id);
+
+      handleClose();
+
+      enqueueSnackbar('Delete category successfully.', {
+        variant: 'success',
+        anchorOrigin: {
+          horizontal: 'right',
+          vertical: 'top',
+        },
+      });
+    } catch (error) {
+      console.log('Failed to delete: ', error);
+      enqueueSnackbar(error.message, {
+        variant: 'error',
+        anchorOrigin: {
+          horizontal: 'right',
+          vertical: 'top',
+        },
+      });
+    }
   };
 
   useEffect(() => {
@@ -116,6 +166,11 @@ function Category() {
           )}
         </DialogContent>
       </Dialog>
+
+      <ConfirmationDialog
+        confirmDialog={confirmDialog}
+        setConfirmDialog={setConfirmDialog}
+      />
     </div>
   );
 }
