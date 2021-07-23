@@ -2,7 +2,7 @@ import categoryApi from 'api/categoryApi';
 import { useSnackbar } from 'notistack';
 import PropTypes from 'prop-types';
 import React from 'react';
-import UpdateCategoryForm from '../UpdateProductForm/UpdateProductForm';
+import UpdateCategoryForm from '../UpdateCategoryForm/UpdateCategoryForm';
 
 UpdateCategory.propTypes = {
   closeDialog: PropTypes.func,

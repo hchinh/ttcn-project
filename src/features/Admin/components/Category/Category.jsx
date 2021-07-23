@@ -24,7 +24,10 @@ function Category() {
       <td>{item.name}</td>
       <td>{item.thumbnail}</td>
       <td className="category__actions">
-        <button className="category__edit-button" onClick={handleUpdateOpen}>
+        <button
+          className="category__edit-button"
+          onClick={() => handleUpdateOpen(item)}
+        >
           Edit
         </button>
         <i className="far fa-trash-alt category__delete-icon"></i>
@@ -34,13 +37,15 @@ function Category() {
   const [categoryList, setCategoryList] = useState();
   const [open, setOpen] = useState(false);
   const [mode, setMode] = useState(MODE.CREATE);
+  const [category, setCategory] = useState();
 
   const handleAddOpen = () => {
     setMode(MODE.CREATE);
     setOpen(true);
   };
 
-  const handleUpdateOpen = () => {
+  const handleUpdateOpen = (item) => {
+    setCategory(item);
     setMode(MODE.UPDATE);
     setOpen(true);
   };
@@ -106,7 +111,9 @@ function Category() {
         <DialogContent>
           {mode === MODE.CREATE && <AddCategory closeDialog={handleClose} />}
 
-          {mode === MODE.UPDATE && <UpdateCategory closeDialog={handleClose} />}
+          {mode === MODE.UPDATE && (
+            <UpdateCategory closeDialog={handleClose} category={category} />
+          )}
         </DialogContent>
       </Dialog>
     </div>
