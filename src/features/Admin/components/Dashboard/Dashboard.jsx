@@ -1,4 +1,4 @@
-import { Grid } from '@material-ui/core';
+import { Button, Grid } from '@material-ui/core';
 import statusCards from 'assets/data/card-data.json';
 import StatusCard from 'components/StatusCard/StatusCard';
 import Table from 'components/Table/Table';
@@ -94,7 +94,7 @@ const renderCustomerBody = (item, index) => (
 );
 
 const latestOrders = {
-  header: ['order ID', 'user', 'total price', 'date', 'status'],
+  header: ['order ID', 'user', 'date', 'total price', 'status'],
   body: [
     {
       id: '#OD1716',
@@ -134,6 +134,13 @@ const latestOrders = {
   ],
 };
 
+const orderStatus = {
+  shipping: 'primary',
+  pending: 'secondary',
+  paid: 'default',
+  refund: 'secondary',
+};
+
 const renderOrderHead = (item, index) => <th key={index}>{item}</th>;
 
 const renderOrderBody = (item, index) => (
@@ -143,7 +150,14 @@ const renderOrderBody = (item, index) => (
     <td>{item.date}</td>
     <td>{item.price}</td>
     <td>
-      <span>{item.status}</span>
+      <Button
+        variant="contained"
+        onClick={() => console.log(orderStatus[item.status])}
+        color={orderStatus[item.status]}
+        size="small"
+      >
+        {item.status}
+      </Button>
     </td>
   </tr>
 );

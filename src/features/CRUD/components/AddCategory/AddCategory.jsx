@@ -1,30 +1,25 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import AddProductForm from '../AddProductForm/AddProductForm';
+import categoryApi from 'api/categoryApi';
 import { useSnackbar } from 'notistack';
-import productApi from 'api/productApi';
+import PropTypes from 'prop-types';
+import React from 'react';
+import AddCategoryForm from '../AddCategoryForm/AddCategoryForm';
 
-AddProduct.propTypes = {
+AddCategory.propTypes = {
   closeDialog: PropTypes.func,
 };
 
-function AddProduct({ closeDialog }) {
+function AddCategory({ closeDialog }) {
   const { enqueueSnackbar } = useSnackbar();
 
   const handleSubmit = async (values) => {
     try {
-      const formValues = {
-        ...values,
-        salePrice: Number.parseInt(values.salePrice),
-      };
-
-      await productApi.add(formValues);
+      await categoryApi.add(values);
 
       if (closeDialog) {
         closeDialog();
       }
 
-      enqueueSnackbar('Create new product successfully.', {
+      enqueueSnackbar('Create new category successfully.', {
         variant: 'success',
         anchorOrigin: {
           horizontal: 'right',
@@ -45,9 +40,9 @@ function AddProduct({ closeDialog }) {
 
   return (
     <div>
-      <AddProductForm onSubmit={handleSubmit} />
+      <AddCategoryForm onSubmit={handleSubmit} />
     </div>
   );
 }
 
-export default AddProduct;
+export default AddCategory;
