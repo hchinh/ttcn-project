@@ -50,9 +50,7 @@ function Login(props) {
   };
 
   return (
-    <Box className={classes.root}>
       <LoginForm onSubmit={handleSubmit} />
-    </Box>
   );
 }
 
