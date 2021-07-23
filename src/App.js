@@ -4,11 +4,8 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Cart from './components/Cart/Cart';
 import ErrorPage from './components/ErrorPage/ErrorPage';
-import Login from './features/Login/Login';
 import Product from './features/Product/product.jsx';
 import ProductDetail from './features/ProductDetail/ProductDetail';
-import Cart from "./components/Cart/Cart"
-import Login from "./features/Login/Login"
 import UserLoginPage from "./features/Auth/pages/UserLoginPage"
 function App() {
   return (
