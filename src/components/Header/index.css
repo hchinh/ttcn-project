@@ -16,7 +16,7 @@
     -webkit-box-pack: justify;
      justify-content: space-between; 
     position: fixed;
-    z-index: 99999;
+    z-index: 2;
     top: 0px;
     left: 0px;
     width: 100%;
