@@ -136,9 +136,9 @@ const latestOrders = {
 
 const orderStatus = {
   shipping: 'primary',
-  pending: 'warning',
-  paid: 'success',
-  refund: 'danger',
+  pending: 'secondary',
+  paid: 'default',
+  refund: 'secondary',
 };
 
 const renderOrderHead = (item, index) => <th key={index}>{item}</th>;
