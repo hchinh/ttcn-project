@@ -63,7 +63,6 @@ function UserLoginForm({ onSubmit = null }) {
         alt="logo"
         width="150px"
       />
-      <Typography className={classes.title}>Login to admin</Typography>
       <form onSubmit={form.handleSubmit(handleSubmit)}>
         <InputField name="identifier" label="Email" form={form} />
         <PasswordField name="password" label="Password" form={form} />
