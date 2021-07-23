@@ -3,9 +3,13 @@ import './index.css';
 // import SearchForm from './components/SearchForm'
 import { Link, useHistory } from 'react-router-dom';
 import styles from './Cart.module.css';
+import { useDispatch } from 'react-redux';
+import { logoutUser } from 'features/Auth/authSlice'
 function NavBar(props) {
+  const dispatch = useDispatch();
   const [navBar, setnavBar] = useState(false);
   const history = useHistory();
+
   const changeBackgroundColor = () => {
     if (window.scrollY >= 400) {
       setnavBar(true);
@@ -14,6 +18,8 @@ function NavBar(props) {
     }
   };
   const handeLogout = () => {
+    const action = logoutUser();
+    dispatch(action);
     history.push('/login1');
   };
   window.addEventListener('scroll', changeBackgroundColor);
