@@ -205,3 +205,23 @@
  font-weight: 600;
  font-family: 'Merienda'
 }
+.productQuantity{
+  margin-bottom: 20px;
+}
+.quantityTitle{
+  margin-bottom:20px;
+  font-family: Lato, sans-serif;
+  color: rgb(66, 69, 97);
+}
+.numberQuantity{
+  margin: 0px 10px;
+}
+.quantityBox{
+  padding: 4px 12px;
+  border: 1px solid ;
+  border-color: rgb(66, 69, 97);;
+}
+.quantityBox i{
+  color:  rgb(66, 69, 97);
+  font-weight: 600;
+}

@@ -43,6 +43,16 @@ return (
                 </div>
                
             </div>
+            <div className={styles.productQuantity}>
+                <div className={styles.quantityTitle}>Số lượng</div>
+                <span className={styles.quantityBox}>
+                    <i class="fas fa-minus"></i>
+                    <span className={styles.numberQuantity}>
+                        1
+                    </span>
+                    <i class="fas fa-plus"></i>
+                </span>
+            </div>
             <div className={styles.ProductCartWapper}>
                 <div className={styles.ProductPriceWapper}>{formatPrice(product?.salePrice)}</div>
                 <button className={styles.btn_cart}>
