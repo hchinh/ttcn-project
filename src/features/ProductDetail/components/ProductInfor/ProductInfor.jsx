@@ -48,12 +48,16 @@ function ProductInfor(props) {
         <div className={styles.quantityTitle}>Số lượng</div>
         <span className={styles.quantityBox}>
           <i class="fas fa-minus"></i>
-          <input
+          {/* <input
             type="text"
             className={styles.numberQuantity}
-            name="productName_contains"
+            name="product_Quantity"
             placeholder=""
-          />
+          /> */}
+          <input type="text"  type="text"
+            className={styles.numberQuantity}
+            name="product_Quantity"
+            placeholder=""/>
           <i class="fas fa-plus"></i>
         </span>
       </div>
