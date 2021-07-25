@@ -44,17 +44,7 @@ function ProductInfor(props) {
           <span className={styles.ProductItem}>23.000</span>
         </div>
       </div>
-      <div className={styles.productQuantity}>
-        <div className={styles.quantityTitle}>Số lượng</div>
-        <form className={styles.quantityBox}>
-          <i class="fas fa-minus"></i>
-          <input type="text"  type="text"
-            className={styles.numberQuantity}
-            name="product_Quantity"
-            placeholder=""/>
-          <i class="fas fa-plus"></i>
-        </form>
-      </div>
+      
       <div className={styles.ProductCartWapper}>
         <div className={styles.ProductPriceWapper}>
           {formatPrice(product?.salePrice)}
