@@ -46,20 +46,14 @@ function ProductInfor(props) {
       </div>
       <div className={styles.productQuantity}>
         <div className={styles.quantityTitle}>Số lượng</div>
-        <span className={styles.quantityBox}>
+        <form className={styles.quantityBox}>
           <i class="fas fa-minus"></i>
-          {/* <input
-            type="text"
-            className={styles.numberQuantity}
-            name="product_Quantity"
-            placeholder=""
-          /> */}
           <input type="text"  type="text"
             className={styles.numberQuantity}
             name="product_Quantity"
             placeholder=""/>
           <i class="fas fa-plus"></i>
-        </span>
+        </form>
       </div>
       <div className={styles.ProductCartWapper}>
         <div className={styles.ProductPriceWapper}>
