@@ -1,12 +1,19 @@
 // import SearchForm from 'components/Header/components/SearchForm';
 import React from 'react';
 import styles from './NavBar.module.css';
-import { Link,useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { Badge, IconButton } from '@material-ui/core';
+import { ShoppingCart } from '@material-ui/icons';
+import { useSelector } from 'react-redux';
+import { cartItemsCountSelector } from 'features/Cart/selectors';
 function NavBar(props) {
   const history = useHistory();
+  const cartItemsCount = useSelector(cartItemsCountSelector);
+
   const handeLogout = () => {
     history.push('/login1');
   };
+
   return (
     <div className={styles.navBar}>
       <Link to={'/'} className={styles.header}>
@@ -15,8 +22,14 @@ function NavBar(props) {
       <div className={styles.navbar_right}>
         <Link to="/cart">
           <div className={styles.navbar__cart}>
-            <i className={styles.cart__image} class="fas fa-shopping-cart"></i>
-            <div className={styles.cart__counter}>1</div>
+            <IconButton color="inherit">
+              <Badge
+                badgeContent={!isNaN(cartItemsCount) ? cartItemsCount : 0}
+                color="secondary"
+              >
+                <ShoppingCart />
+              </Badge>
+            </IconButton>
           </div>
         </Link>
         <li className={styles.nav__itemsaccount}>
