@@ -2,8 +2,6 @@
 import React from 'react';
 import styles from './NavBar.module.css';
 import { Link, useHistory } from 'react-router-dom';
-import { Badge, IconButton } from '@material-ui/core';
-import { ShoppingCart } from '@material-ui/icons';
 import { useSelector } from 'react-redux';
 import { cartItemsCountSelector } from 'features/Cart/selectors';
 function NavBar(props) {
@@ -22,14 +20,10 @@ function NavBar(props) {
       <div className={styles.navbar_right}>
         <Link to="/cart">
           <div className={styles.navbar__cart}>
-            <IconButton color="inherit">
-              <Badge
-                badgeContent={!isNaN(cartItemsCount) ? cartItemsCount : 0}
-                color="secondary"
-              >
-                <ShoppingCart />
-              </Badge>
-            </IconButton>
+            <i className={styles.cart__image} class="fas fa-shopping-cart"></i>
+            <div className={styles.cart__counter}>
+              {!isNaN(cartItemsCount) ? cartItemsCount : 0}
+            </div>
           </div>
         </Link>
         <li className={styles.nav__itemsaccount}>

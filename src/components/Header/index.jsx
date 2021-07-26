@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import './index.css';
-// import SearchForm from './components/SearchForm'
 import { Link, useHistory } from 'react-router-dom';
 import styles from './Cart.module.css';
 import { useDispatch } from 'react-redux';
 import { logoutUser } from 'features/Auth/authSlice'
+import { useSelector } from 'react-redux';
+import { cartItemsCountSelector } from 'features/Cart/selectors';
 function NavBar(props) {
   const dispatch = useDispatch();
   const [navBar, setnavBar] = useState(false);
   const history = useHistory();
-
+  const cartItemsCount = useSelector(cartItemsCountSelector);
   const changeBackgroundColor = () => {
     if (window.scrollY >= 400) {
       setnavBar(true);
@@ -32,7 +33,7 @@ function NavBar(props) {
         <Link to="/cart">
           <div className={styles.navbar__cart}>
             <i className={styles.cart__image} class="fas fa-shopping-cart"></i>
-            <div className={styles.cart__counter}>1</div>
+            <div className={styles.cart__counter}>{!isNaN(cartItemsCount) ? cartItemsCount : 0}</div>
           </div>
         </Link>
         <li className={styles.nav__itemsaccount}>

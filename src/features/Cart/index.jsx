@@ -12,7 +12,8 @@ import { removeFromCart, setQuantity } from './cartSlice';
 import DetailCart from './components/DetailCart';
 import ProductTotal from './components/ProductTotal';
 import TotalCost from './components/TotalCost';
-
+import NavBar from '../ProductDetail/components/Navbar/NavBar'
+import styles from "./index.module.css"
 CartFeature.propTypes = {};
 
 const useStyles = makeStyles((theme) => ({
@@ -45,7 +46,9 @@ function CartFeature() {
   };
 
   return (
-    <Box className={classes.root}>
+    <React.Fragment>
+    <NavBar/>
+    <Box className={styles.box}>
       <Container>
         <Typography
           component="h1"
@@ -70,6 +73,7 @@ function CartFeature() {
         </Grid>
       </Container>
     </Box>
+    </React.Fragment>
   );
 }
 

@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
+import styles from './AddToCartForm.module.css'
 
 AddToCartForm.propTypes = {
   onSubmit: PropTypes.func,
@@ -34,17 +35,18 @@ function AddToCartForm({ onSubmit = null }) {
 
   return (
     <form onSubmit={form.handleSubmit(handleSubmit)}>
-      <QuantityField name="quantity" label="Số lượng" form={form} />
-
-      <Button
+      <div className={styles.title}>Số lượng</div>
+      <QuantityField name="quantity"  form={form}  />
+      <button
         type="submit"
         variant="contained"
         color="primary"
-        style={{ width: '180px' }}
         size="large"
+        className ={styles.btn_cart}
       >
+        <i class="fas fa-shopping-cart"></i>
         Add to Cart
-      </Button>
+      </button>
     </form>
   );
 }

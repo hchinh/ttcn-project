@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     listStyleType: 'none',
     fontSize: '14px',
-
+    marginTop:'10px',
     paddingTop: theme.spacing(1.5),
     paddingLeft: theme.spacing(2),
     marginBottom: 0,
@@ -41,12 +41,22 @@ const useStyles = makeStyles((theme) => ({
   name: {
     paddingLeft: theme.spacing(2.5),
     fontSize: '14px',
+    padding: '0px 10px',
+    lineHeight: '1.8rem',
+    height: '3.6rem',
+    overflow: 'hidden',
+    fontWeight: '400',
+    display: 'block',
+    display: '-webkit-box',
+    webkitBoxOrient: 'vertical',
+    webkitLineClamp: '2',
   },
 
   center: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    fontSize: '15px',
   },
 
   salePrice: {

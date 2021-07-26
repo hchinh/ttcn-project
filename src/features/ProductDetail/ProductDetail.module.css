@@ -144,14 +144,7 @@
     line-height: 32px;
     height: 36px;
   }
-  .btn_cart:hover {
-    color: #fff;
-    background-color: rgb(0, 158, 127);
-    border: none;
-  }
-  .btn_cart i{
-    margin-right:5px;
-  }
+  
   .home__productprice i {
     margin-right: 5px;
     font-size: 13px;

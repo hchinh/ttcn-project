@@ -87,10 +87,6 @@ function ProductInfor(props) {
           {formatPrice(product?.salePrice)}
         </div>
         <AddToCartForm onSubmit={handleAddToCartForm} />
-        <button className={styles.btn_cart}>
-          <i class="fas fa-shopping-cart"></i>
-          Cart
-        </button>
       </div>
     </div>
   );
