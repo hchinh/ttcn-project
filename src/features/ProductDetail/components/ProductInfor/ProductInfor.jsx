@@ -12,10 +12,6 @@ import MuiAlert from '@material-ui/lab/Alert';
 const Alert = (props) => <MuiAlert elevation={6} variant="filled" {...props} />;
 
 function ProductInfor(props) {
-<<<<<<< HEAD
-  const [product, setproduct] = useState(null);
-  const { id } = useParams();
-=======
   const [product, setProduct] = useState(null);
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -27,21 +23,11 @@ function ProductInfor(props) {
     }
     setOpen(false);
   };
->>>>>>> feature/cart
 
   useEffect(() => {
     if (id) {
       const getApi = `https://api-mts.herokuapp.com/products/${id}`;
       axios.get(getApi).then((response) => {
-<<<<<<< HEAD
-        setproduct(response.data);
-      });
-    }
-  }, [id]);
-  return (
-    <div>
-      {console.log(product)}
-=======
         setProduct(response.data);
       });
     }
@@ -70,7 +56,6 @@ function ProductInfor(props) {
           Thêm vào giỏ hàng thành công
         </Alert>
       </Snackbar>
->>>>>>> feature/cart
       <h4 className={styles.ProductName}>{product?.productName}</h4>
       <h5 className={styles.ProductBand}>
         {/* <i class="fab fa-apple"></i> */}
@@ -97,18 +82,11 @@ function ProductInfor(props) {
           <span className={styles.ProductItem}>23.000</span>
         </div>
       </div>
-<<<<<<< HEAD
-      
-=======
->>>>>>> feature/cart
       <div className={styles.ProductCartWapper}>
         <div className={styles.ProductPriceWapper}>
           {formatPrice(product?.salePrice)}
         </div>
-<<<<<<< HEAD
-=======
         <AddToCartForm onSubmit={handleAddToCartForm} />
->>>>>>> feature/cart
         <button className={styles.btn_cart}>
           <i class="fas fa-shopping-cart"></i>
           Cart
