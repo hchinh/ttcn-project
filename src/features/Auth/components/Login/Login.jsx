@@ -1,5 +1,3 @@
-import { Box } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import { unwrapResult } from '@reduxjs/toolkit';
 import { login } from 'features/Auth/authSlice';
 import { useSnackbar } from 'notistack';
@@ -10,20 +8,7 @@ import LoginForm from '../LoginForm/LoginForm';
 
 Login.propTypes = {};
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: '30%',
-    height: '50%',
-    padding: theme.spacing(5),
-    backgroundColor: '#FFFFFF',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-}));
-
 function Login(props) {
-  const classes = useStyles();
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
   const history = useHistory();
@@ -49,9 +34,7 @@ function Login(props) {
     }
   };
 
-  return (
-      <LoginForm onSubmit={handleSubmit} />
-  );
+  return <LoginForm onSubmit={handleSubmit} />;
 }
 
 export default Login;

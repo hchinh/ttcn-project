@@ -1,11 +1,11 @@
 import { yupResolver } from '@hookform/resolvers/yup';
+import { Button, makeStyles } from '@material-ui/core';
 import InputField from 'components/form-controls/InputField';
 import PasswordField from 'components/form-controls/PasswordField';
+import PropTypes from 'prop-types';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
-import PropTypes from 'prop-types';
-import { Button, makeStyles, Typography } from '@material-ui/core';
 import styles from './LoginForm.module.css';
 
 LoginForm.propTypes = {
