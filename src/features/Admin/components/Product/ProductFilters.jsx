@@ -39,7 +39,7 @@ function ProductFilters({ onChange }) {
 
   return (
     <div className="product-filters">
-      <span className="product-filters__title">Products</span>
+      <h1 className="product-filters__title">Products</h1>
       <FilterByCategory onChange={handleCategoryChange} />
       <SortByPrice onChange={handleSortChange} />
       <SearchByName onChange={handleSearch} />

@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
   avatar: {
     margin: '0 auto',
-    backgroundColor: '#00e58d',
+    backgroundColor: '#ff4a6b',
   },
 
   title: {
@@ -32,10 +32,10 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2, 0),
     color: 'white',
-    backgroundColor: '#00e58d',
+    backgroundColor: '#349eff',
 
     '&:hover': {
-      backgroundColor: '#00cf8d',
+      backgroundColor: '#62b4ff',
     },
   },
 
