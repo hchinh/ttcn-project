@@ -17,11 +17,11 @@
 
   &__logo {
     display: block;
-    max-width: 150px;
-    width: 150px;
-    height: 24.25px;
-    margin-left: 65px;
-
+    color: #3490de;
+    text-decoration: none;
+    margin-left: 28px;
+    font-size: 2.5rem;
+    font-weight: 700;
     cursor: pointer;
   }
 
@@ -33,16 +33,17 @@
   &__icons {
     position: relative;
     cursor: pointer;
-    margin-right: 32px;
+    margin-right: 56px;
     color: #555;
+    font-size: 24px;
   }
 
   &__icon-badge {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     position: absolute;
-    top: -2px;
-    right: -1px;
+    top: -4px;
+    right: -7px;
     background-color: red;
     color: white;
     border-radius: 50%;
@@ -53,8 +54,8 @@
   }
 
   &__avatar {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
     cursor: pointer;
   }
@@ -63,14 +64,18 @@
     height: 50px;
     width: 140px;
     padding: 14px 25px;
-    background-color: #00e58d;
+    background-color: #349eff;
     color: white;
     font-weight: 700;
     font-size: 14px;
     cursor: pointer;
-    border-radius: 3px;
-    border-style: none;
-    margin-right: 32px;
+    border-radius: 10px;
+    border: none;
+    margin-right: 56px;
+
+    &:hover {
+      background-color: #62b4ff;
+    }
   }
 }
 

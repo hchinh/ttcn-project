@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 
   avatar: {
     margin: '0 auto',
-    backgroundColor: '#00c68d',
+    backgroundColor: '#ff4a6b',
   },
 
   title: {
@@ -47,17 +47,6 @@ const useStyles = makeStyles((theme) => ({
     top: theme.spacing(1),
     right: 0,
     left: 0,
-  },
-
-  select: {
-    width: '100%',
-    marginTop: theme.spacing(2),
-    height: theme.spacing(7),
-    fontSize: '17px',
-    padding: '0 8px',
-    color: '#888',
-    borderRadius: theme.spacing(0.5),
-    border: '1px solid #bbb',
   },
 }));
 

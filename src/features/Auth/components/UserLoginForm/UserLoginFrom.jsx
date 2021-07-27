@@ -1,12 +1,12 @@
 import { yupResolver } from '@hookform/resolvers/yup';
+import { Button, makeStyles } from '@material-ui/core';
 import InputField from 'components/form-controls/InputField';
 import PasswordField from 'components/form-controls/PasswordField';
+import PropTypes from 'prop-types';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
-import PropTypes from 'prop-types';
-import { Button, makeStyles, Typography } from '@material-ui/core';
-import styles from './UserLoginForm.module.css'
+import styles from './UserLoginForm.module.css';
 UserLoginForm.propTypes = {
   onSubmit: PropTypes.func,
 };
@@ -57,31 +57,33 @@ function UserLoginForm({ onSubmit = null }) {
   const { isSubmitting } = form.formState;
   return (
     <div className={styles.loginForm}>
-     
-      <form className={styles.filter_products} onSubmit={form.handleSubmit(handleSubmit)}>
-      <div className={styles.form_inner}>
-        <h2 className={styles.title}>Login</h2>
-        <InputField name="identifier" label="Email" form={form} />
-        <PasswordField name="password" label="Password" form={form} />
-        <Button
-          className={classes.submit}
-          disabled={isSubmitting}
-          type="submit"
-          fullWidth
-          variant="contained"
-          color="primary"
-          size="large"
-        >
-          Sign In
-        </Button>
-      </div>
+      <form
+        className={styles.filter_products}
+        onSubmit={form.handleSubmit(handleSubmit)}
+      >
+        <div className={styles.form_inner}>
+          <h2 className={styles.title}>Login</h2>
+          <InputField name="identifier" label="Email" form={form} />
+          <PasswordField name="password" label="Password" form={form} />
+          <Button
+            className={classes.submit}
+            disabled={isSubmitting}
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            size="large"
+          >
+            Sign In
+          </Button>
+        </div>
         <div className={styles.text_center}>
-              <span>Or Sign Up Using</span>
+          <span>Or Sign Up Using</span>
         </div>
         <div className={styles.icon}>
-        <i class="fab fa-facebook-f"></i>
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-google"></i>
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-google"></i>
         </div>
       </form>
     </div>

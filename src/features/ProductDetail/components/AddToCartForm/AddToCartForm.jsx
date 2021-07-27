@@ -1,11 +1,10 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Button } from '@material-ui/core';
 import QuantityField from 'components/form-controls/QuantityField';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
-import styles from './AddToCartForm.module.css'
+import styles from './AddToCartForm.module.css';
 
 AddToCartForm.propTypes = {
   onSubmit: PropTypes.func,
@@ -36,13 +35,13 @@ function AddToCartForm({ onSubmit = null }) {
   return (
     <form onSubmit={form.handleSubmit(handleSubmit)}>
       <div className={styles.title}>Số lượng</div>
-      <QuantityField name="quantity"  form={form}  />
+      <QuantityField name="quantity" form={form} />
       <button
         type="submit"
         variant="contained"
         color="primary"
         size="large"
-        className ={styles.btn_cart}
+        className={styles.btn_cart}
       >
         <i class="fas fa-shopping-cart"></i>
         Add to Cart

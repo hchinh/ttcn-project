@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     listStyleType: 'none',
     fontSize: '14px',
-    marginTop:'10px',
+    marginTop: '10px',
     paddingTop: theme.spacing(1.5),
     paddingLeft: theme.spacing(2),
     marginBottom: 0,
@@ -46,7 +46,6 @@ const useStyles = makeStyles((theme) => ({
     height: '3.6rem',
     overflow: 'hidden',
     fontWeight: '400',
-    display: 'block',
     display: '-webkit-box',
     webkitBoxOrient: 'vertical',
     webkitLineClamp: '2',

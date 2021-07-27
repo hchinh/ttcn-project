@@ -24,7 +24,7 @@
     display: flex;
     align-items: center;
     font-weight: 700;
-    transition: #00c58d 0.3s ease 0s;
+    transition: #349eff 0.3s ease 0s;
 
     & > i {
       margin-right: 12px;
@@ -33,12 +33,12 @@
     }
 
     &:hover {
-      color: #00c58d;
+      color: #349eff;
     }
 
     &.active {
       border-radius: 15px;
-      background-image: linear-gradient(to right, #00c58d, #00e58d);
+      background-image: linear-gradient(to right, #349eff, #62b4ff);
       color: white;
     }
   }

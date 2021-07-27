@@ -27,19 +27,19 @@
   &__edit-button {
     padding: 3px 8px;
     margin-right: 10px;
-    background-color: #2196f3;
+    background-color: #019707;
     color: white;
     border: none;
     border-radius: 12px;
     cursor: pointer;
 
     &:hover {
-      background-color: #4da3f5;
+      background-color: #4caf50;
     }
   }
 
   &__delete-icon {
-    color: #f73378;
+    color: #ff4a6b;
     cursor: pointer;
   }
 
@@ -56,7 +56,7 @@
     padding: 16px 0;
     background-color: transparent;
     border: none;
-    color: #03a9f4;
+    color: #349eff;
     cursor: pointer;
 
     &__title {
