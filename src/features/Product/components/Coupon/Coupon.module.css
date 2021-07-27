@@ -11,3 +11,13 @@
     width: 386px;
     height:180px;
 }
+@media(min-width :768px) and (max-width:1024px) {
+    .imgCoupon{
+    width: 219px;
+    height: 180px;
+    }
+  }
+  
+  @media (max-width: 764px) {
+      .sliderCoupon{}
+  }

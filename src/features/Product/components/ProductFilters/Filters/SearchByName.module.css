@@ -17,10 +17,8 @@ lform
  }
  .filter_products{
      width: 360px;
-     padding :4rem;
      padding:4rem 2rem;
      border-radius: 1rem;
-
  }
  .filterproducts__input{
      position :absolute;
@@ -76,3 +74,20 @@ lform
  .filterproducts__input:focus{
      border:2px solid #00CC99
  }
+
+
+ 
+/* Reponsive */
+@media(min-width :768px) and (max-width:1024px) {
+    .filterproducts__input{
+        width:50%;
+    }
+}
+@media (max-width: 764px) {
+    .filter_products{
+        padding:0px;
+    }
+    .filterproducts__input{
+        width:79%;
+    }
+}
