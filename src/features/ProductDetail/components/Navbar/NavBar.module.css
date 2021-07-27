@@ -137,4 +137,27 @@
   background-color:#f8f8f8;
   cursor: pointer;
 }
+
+/* Reposive */
+
+@media(min-width :768px) and (max-width:1024px) {
+  .navBar{
+    width:100%;
+  }
+}
+
+@media (max-width: 764px) {
+  .navBar{
+    width:89%;
+  }
+  .header{
+    margin-left: -9px;
+  }
+  .img{
+    margin-left:15px;
+  }
+  .navbar_right{
+    margin-right:-19px;
+  }
+}
   
