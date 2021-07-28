@@ -19,5 +19,7 @@
   }
   
   @media (max-width: 764px) {
-      .sliderCoupon{}
+      .sliderCoupon{
+          display:none;
+      }
   }

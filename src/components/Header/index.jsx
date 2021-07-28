@@ -38,8 +38,8 @@ function NavBar(props) {
         </Link>
         <li className={styles.nav__itemsaccount}>
           <img
-            src="https://scontent.fpnh22-2.fna.fbcdn.net/v/t1.6435-9/122890287_1809040559248161_946272748631178403_n.jpg?_nc_cat=100&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=Z3SiA1bWkqwAX8vFXwI&tn=SpKm-igtJhBAosnP&_nc_ht=scontent.fpnh22-2.fna&oh=a9b0ec91465d4e8b4470bb523138c435&oe=60FDCA14"
-            alt=""
+             src="https://upload.wikimedia.org/wikipedia/vi/thumb/5/5c/Chelsea_crest.svg/1200px-Chelsea_crest.svg.png"
+            alt="Ảnh đại diện"
             className={styles.img}
           />
           <ul className={styles.nav__itemsmenu}>
