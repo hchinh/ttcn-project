@@ -149,3 +149,29 @@
   cursor: pointer;
   background-color: #333;
 }
+
+
+
+/* Reponsive */
+@media(min-width :768px) and (max-width:1024px) {
+  .filter_products {
+   
+    height:615px;
+  }
+  .loginForm {
+    align-items: center;
+  } 
+}
+
+@media(max-width :764px){
+  .loginForm {
+    align-items: center;
+  }
+  .filter_products {
+    width:321px;
+    height:600px;
+  }
+  .form_inner {
+    width: 259px;
+  }
+}

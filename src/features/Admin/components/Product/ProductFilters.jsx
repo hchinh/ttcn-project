@@ -40,9 +40,11 @@ function ProductFilters({ onChange }) {
   return (
     <div className="product-filters">
       <h1 className="product-filters__title">Products</h1>
+      <div className="product-filters__box">
       <FilterByCategory onChange={handleCategoryChange} />
       <SortByPrice onChange={handleSortChange} />
       <SearchByName onChange={handleSearch} />
+      </div>
     </div>
   );
 }
