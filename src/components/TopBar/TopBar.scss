@@ -89,3 +89,29 @@
     z-index: 1;
   }
 }
+
+
+@media (max-width: 764px) {
+ .top-bar__logo{
+   font-size:23px;
+ }
+ .top-bar__wrapper{
+   padding:0px;
+ }
+ .top-bar__right{
+   margin-left: 20px;
+ }
+ .top-bar__button{
+  height: 39px;
+  width: 99px;
+  padding: 13px 0px;
+  line-height: 16px;
+  margin-right: 25px;
+ }
+ .top-bar__icons{
+   margin-right: 20px;
+ }
+ .top-bar__avatar{
+   margin-right:11px;
+ }
+}

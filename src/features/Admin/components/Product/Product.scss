@@ -1,5 +1,5 @@
 .product {
-  flex: 4;
+  width:80%;
   padding: 30px 24px 24px 24px;
 
   &__pagination {
@@ -9,5 +9,11 @@
 
     margin-top: 30px;
     padding-bottom: 20px;
+  }
+}
+@media (max-width: 764px) {
+  .product{
+    width:77%;
+    padding: 30px 15px 24px 15px;
   }
 }

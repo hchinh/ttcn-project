@@ -99,3 +99,14 @@
   transform: scale(1.03);
   box-shadow: 0 3px 12px #ccc;
 }
+@media(min-width :768px) and (max-width:1024px) {
+  .product-list__item {
+    width:25%;
+  }
+}
+@media (max-width: 764px) {
+  .product-list__item {
+    width:46%;
+  }
+  
+}
