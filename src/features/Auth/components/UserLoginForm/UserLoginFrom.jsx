@@ -2,9 +2,14 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Button, makeStyles } from '@material-ui/core';
 import InputField from 'components/form-controls/InputField';
 import PasswordField from 'components/form-controls/PasswordField';
+import StorageUser from 'constants/storage-user';
+import { setAvatar } from 'features/Auth/authSlice';
 import PropTypes from 'prop-types';
 import React from 'react';
+import FacebookLogin from 'react-facebook-login';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import * as yup from 'yup';
 import styles from './UserLoginForm.module.css';
 UserLoginForm.propTypes = {
@@ -32,6 +37,8 @@ const useStyles = makeStyles((theme) => ({
 
 function UserLoginForm({ onSubmit = null }) {
   const classes = useStyles();
+  const history = useHistory();
+  const dispatch = useDispatch();
   const schema = yup.object().shape({
     identifier: yup
       .string()
@@ -51,6 +58,17 @@ function UserLoginForm({ onSubmit = null }) {
   const handleSubmit = async (values) => {
     if (onSubmit) {
       await onSubmit(values);
+    }
+  };
+
+  const responseFacebook = (response) => {
+    if (response.status !== 'unknown') {
+      dispatch(setAvatar(response.picture.data.url));
+
+      localStorage.setItem(StorageUser.TOKEN, response.accessToken);
+      localStorage.setItem(StorageUser.USER, response.name);
+
+      history.push('/');
     }
   };
 
@@ -81,9 +99,16 @@ function UserLoginForm({ onSubmit = null }) {
           <span>Or Sign Up Using</span>
         </div>
         <div className={styles.icon}>
-          <i class="fab fa-facebook-f"></i>
-          <i class="fab fa-twitter"></i>
-          <i class="fab fa-google"></i>
+          <div className={styles.social_media}>
+            <FacebookLogin
+              appId={process.env.REACT_APP_FACEBOOK_APP_ID}
+              autoLoad={true}
+              fields="name,picture"
+              callback={responseFacebook}
+              icon="fab fa-facebook-f"
+              cssClass={styles.fb_btn}
+            />
+          </div>
         </div>
       </form>
     </div>
