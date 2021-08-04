@@ -61,7 +61,7 @@ function TopBar(props) {
 
           <img
             className="top-bar__avatar"
-            src="https://upload.wikimedia.org/wikipedia/vi/thumb/5/5c/Chelsea_crest.svg/1200px-Chelsea_crest.svg.png"
+            src="https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=1670746276469971&height=50&width=50&ext=1630640379&hash=AeQRqhF_z5JMdTp8T4Q"
             alt="avatar"
             onClick={handleUserClick}
           />
