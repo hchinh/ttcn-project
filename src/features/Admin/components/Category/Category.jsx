@@ -125,7 +125,7 @@ function Category() {
     <div className="category">
       <h3 className="category__header">Categories</h3>
       <Grid container>
-        <Grid item lg={12}>
+        <Grid item lg={12} xs={12}>
           <div className="category__card">
             <div className="category__card__body">
               <Table
