@@ -3,27 +3,34 @@ import './index.css';
 import { Link, useHistory } from 'react-router-dom';
 import styles from './Cart.module.css';
 import { useDispatch } from 'react-redux';
-import { logoutUser } from 'features/Auth/authSlice'
+import { logoutUser } from 'features/Auth/authSlice';
 import { useSelector } from 'react-redux';
 import { cartItemsCountSelector } from 'features/Cart/selectors';
-function NavBar(props) {
+
+function NavBar() {
   const dispatch = useDispatch();
-  const [navBar, setnavBar] = useState(false);
+  const [navBar, setNavBar] = useState(false);
   const history = useHistory();
+
   const cartItemsCount = useSelector(cartItemsCountSelector);
+  const avatarUrl = useSelector((state) => state.admin.avatarUrl);
+
   const changeBackgroundColor = () => {
     if (window.scrollY >= 400) {
-      setnavBar(true);
+      setNavBar(true);
     } else {
-      setnavBar(false);
+      setNavBar(false);
     }
   };
-  const handeLogout = () => {
+
+  const handleLogout = () => {
     const action = logoutUser();
     dispatch(action);
     history.push('/login1');
   };
+
   window.addEventListener('scroll', changeBackgroundColor);
+
   return (
     <div className={navBar ? 'navBar active ' : 'navBar '}>
       <Link to={'/'} className="header">
@@ -33,12 +40,17 @@ function NavBar(props) {
         <Link to="/cart">
           <div className={styles.navbar__cart}>
             <i className={styles.cart__image} class="fas fa-shopping-cart"></i>
-            <div className={styles.cart__counter}>{!isNaN(cartItemsCount) ? cartItemsCount : 0}</div>
+            <div className={styles.cart__counter}>
+              {!isNaN(cartItemsCount) ? cartItemsCount : 0}
+            </div>
           </div>
         </Link>
         <li className={styles.nav__itemsaccount}>
           <img
-             src="https://upload.wikimedia.org/wikipedia/vi/thumb/5/5c/Chelsea_crest.svg/1200px-Chelsea_crest.svg.png"
+            src={
+              avatarUrl ||
+              'https://upload.wikimedia.org/wikipedia/vi/thumb/5/5c/Chelsea_crest.svg/1200px-Chelsea_crest.svg.png'
+            }
             alt="Ảnh đại diện"
             className={styles.img}
           />
@@ -50,7 +62,7 @@ function NavBar(props) {
               <div href="">Đơn mua</div>
             </li>
             <li className={styles.nav__menuitems}>
-              <div onClick={handeLogout} href="">
+              <div onClick={handleLogout} href="">
                 Đăng xuẩt
               </div>
             </li>
