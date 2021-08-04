@@ -167,10 +167,10 @@ function Dashboard() {
     <div className="dashboard">
       <h3 className="dashboard__header">Dashboard</h3>
       <Grid container spacing={3}>
-        <Grid item lg={6}>
+        <Grid item lg={6} xs={12}>
           <Grid container spacing={3}>
             {statusCards.map((item, index) => (
-              <Grid item lg={6}>
+              <Grid item lg={6} xs={6}>
                 <StatusCard
                   icon={item.icon}
                   count={item.count}
@@ -180,7 +180,7 @@ function Dashboard() {
             ))}
           </Grid>
         </Grid>
-        <Grid item lg={6}>
+        <Grid item lg={6} xs={12}>
           <div className="dashboard__card dashboard__full-height">
             <Chart
               options={chartOptions.options}
@@ -190,7 +190,7 @@ function Dashboard() {
             />
           </div>
         </Grid>
-        <Grid item lg={4}>
+        <Grid item lg={4} xs={12}>
           <div className="dashboard__card">
             <div className="dashboard__card__header">
               <h3>top customers</h3>
@@ -208,7 +208,7 @@ function Dashboard() {
             </div>
           </div>
         </Grid>
-        <Grid item lg={8}>
+        <Grid item lg={8} xs={12}>
           <div className="dashboard__card">
             <div className="dashboard__card__header">
               <h3>latest orders</h3>
