@@ -44,6 +44,12 @@
   }
 }
 
+@media (max-width: 764px) {
+  .dashboard{
+    width:77%;
+    padding: 30px 15px 24px 15px;
+  }
+}
 // .dashboard__card.dashboard__full-height {
 //   height: calc(100% - 24px);
 // }
