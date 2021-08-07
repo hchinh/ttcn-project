@@ -8,13 +8,12 @@ ProductTotal.propTypes = {};
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    marginTop: '10px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     paddingLeft: theme.spacing(2),
     fontSize: '16px',
-    fontWeight:'500',
+    fontWeight: '500',
   },
 
   center: {
