@@ -1,23 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import s from './Confirm.module.scss';
 
-function Confirm({ close, deleteAllCart }) {
+function Confirm() {
 	return (
 		<div className={s.body}>
 			<div>
-				<p className={s.text}>Bạn có muốn xoá tất cả ?</p>
+				<p className={s.text}>Thanh Toán Thành Công, Trở Về Trang Chủ</p>
 			</div>
-			<div className="d-flex">
-				<button
-					onClick={() => deleteAllCart()}
-					className={`${s.button} ${s.button_active}`}
-				>
-					Yes
-				</button>
-				<button onClick={() => close(false)} className={s.button}>
-					No
-				</button>
-			</div>
+			<button className={s.button}>
+				<Link className={s.link} to="/">
+					Home
+				</Link>
+			</button>
 		</div>
 	);
 }
