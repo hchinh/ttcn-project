@@ -76,7 +76,6 @@ function DetailCart({ onRemove = null, onChange = null }) {
     if (!onChange) return;
     onChange(product);
   };
-
   return (
     <Box>
       <Paper elevation={0}>
