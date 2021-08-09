@@ -50,13 +50,13 @@ function TotalCost() {
     dispatch(removeAllCart());
   }
 
-  function closeBox() {
-    setDeleteAll(false);
-  }
+  // function closeBox() {
+  //   setDeleteAll(false);
+  // }
 
-  function deleteAllCart() {
-    setDeleteAll(false);
-  }
+  // function deleteAllCart() {
+  //   setDeleteAll(false);
+  // }
 
   return (
     <Box>
@@ -98,8 +98,6 @@ function TotalCost() {
       {deleteAll && (
         <div className={s.center}>
           <Confirm
-            deleteAllCart={(e) => deleteAllCart(e)}
-            close={(e) => closeBox(e)}
           />
         </div>
       )}
